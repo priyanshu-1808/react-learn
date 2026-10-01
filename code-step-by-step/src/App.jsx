@@ -1,28 +1,29 @@
-import { useState } from "react"
-import User from "./User"
-
+import { useState } from "react";
 
 function App() {
-
-  const [display, setDisplay] = useState(true)
+  const [status, setStatus] = useState("loading");
 
   return (
     <div>
-      <h1>Toggle In React JS</h1>
-      <button onClick={() => setDisplay(!display)}>Toggle</button>
-      
-      
-      {/*{
-        display ? <h1>Priyanshu Agarwal</h1> : null
-      } */}
-      {
-        display?<User/> :null
-      }
+      {status === "loading" && <h2>Loading...</h2>}
 
+      {status === "success" && <h2>Data Loaded Successfully!</h2>}
 
+      {status === "error" && <h2>Something went wrong!</h2>}
+
+      <button onClick={() => setStatus("loading")}>
+        Loading
+      </button>
+
+      <button onClick={() => setStatus("success")}>
+        Success
+      </button>
+
+      <button onClick={() => setStatus("error")}>
+        Error
+      </button>
     </div>
-  )
+  );
 }
 
-
-export default App
+export default App;
