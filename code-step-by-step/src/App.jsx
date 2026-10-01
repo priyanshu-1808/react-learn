@@ -1,29 +1,23 @@
 import { useState } from "react";
-
 function App() {
-  const [status, setStatus] = useState("loading");
+  const [count,setCount] = useState(0);
+return(
+  
+  <div>
+   <h1>{count}</h1>
+   <button onClick={()=>setCount(count + 1)}>Counter</button>
+   {
+     count==0?<h1>Conditon 0</h1>
+     :count==1?<h1>Condition 1</h1>
+     :count==2?<h1>Condition 2</h1>
+     :count==3?<h1>Condition 3</h1>
+     :count==4?<h1>Condition 4</h1>
+     :count==5?<h1>Condition 5</h1>
+     :<h1>Other Condition</h1>
+   }
+   </div>
+ )
 
-  return (
-    <div>
-      {status === "loading" && <h2>Loading...</h2>}
-
-      {status === "success" && <h2>Data Loaded Successfully!</h2>}
-
-      {status === "error" && <h2>Something went wrong!</h2>}
-
-      <button onClick={() => setStatus("loading")}>
-        Loading
-      </button>
-
-      <button onClick={() => setStatus("success")}>
-        Success
-      </button>
-
-      <button onClick={() => setStatus("error")}>
-        Error
-      </button>
-    </div>
-  );
 }
 
-export default App;
+export default App
