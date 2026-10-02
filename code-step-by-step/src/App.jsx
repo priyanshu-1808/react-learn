@@ -1,23 +1,54 @@
-import { useState } from "react";
-function App() {
-  const [count,setCount] = useState(0);
-return(
-  
-  <div>
-   <h1>{count}</h1>
-   <button onClick={()=>setCount(count + 1)}>Counter</button>
-   {
-     count==0?<h1>Conditon 0</h1>
-     :count==1?<h1>Condition 1</h1>
-     :count==2?<h1>Condition 2</h1>
-     :count==3?<h1>Condition 3</h1>
-     :count==4?<h1>Condition 4</h1>
-     :count==5?<h1>Condition 5</h1>
-     :<h1>Other Condition</h1>
-   }
-   </div>
- )
+import { useState } from "react"
+import College from "./College"
+import Student from "./Student"
+import User from "./User"
 
+function App() {
+  // let userName= "Prince9835";
+  // let age = 29;
+  // let email = "tech.prince@gmail.com"
+
+  let userObject1 = {
+    name: "Priyashu Kr",
+    age: "20",
+    email: "priyanshu@test.com"
+  }
+
+  let userObject2 = {
+    name: "Prince Kr",
+    age: "21",
+    email: "prince@test.com"
+
+  }
+
+  let collegeNames = ['IET', 'DU', 'MIT', 'NIT', 'SCE']
+
+  const [student,setStudent] = useState()
+
+
+  return (
+    <div>
+      <h1>Props In React JS</h1>
+
+       {student && <Student name = {student}/> }
+        <button onClick={()=>setStudent("Agaarwall")}>Update Student Name</button>
+
+      {/* <User name = {userName} age = {age} email = {email}/> */}
+
+      <College name={collegeNames[0]} />
+      <College name={collegeNames[2]} />
+      <College name={collegeNames[3]} />
+      <College name={collegeNames[4]} />
+
+
+      <User user={userObject1} />
+      <User user={userObject2} />
+
+
+
+
+    </div>
+  )
 }
 
 export default App
