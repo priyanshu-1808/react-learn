@@ -1,14 +1,8 @@
 
-
-
-function User({user}) {
-    
+function User({name="New User"}){
     return(
         <div>
-            <hr />
-         <h1>Name: {user.name}</h1>
-         <h2>Age: {user.age}</h2>
-         <h2>Email: {user.email}</h2>
+            <h1>Hi, {name}</h1>
         </div>
     )
 }

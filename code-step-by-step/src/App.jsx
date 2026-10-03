@@ -1,53 +1,32 @@
-import { useState } from "react"
-import College from "./College"
-import Student from "./Student"
 import User from "./User"
+import Wrapper from "./Wrapper"
 
-function App() {
-  // let userName= "Prince9835";
-  // let age = 29;
-  // let email = "tech.prince@gmail.com"
-
-  let userObject1 = {
-    name: "Priyashu Kr",
-    age: "20",
-    email: "priyanshu@test.com"
-  }
-
-  let userObject2 = {
-    name: "Prince Kr",
-    age: "21",
-    email: "prince@test.com"
-
-  }
-
-  let collegeNames = ['IET', 'DU', 'MIT', 'NIT', 'SCE']
-
-  const [student,setStudent] = useState()
-
-
-  return (
+function App(){
+  return(
     <div>
-      <h1>Props In React JS</h1>
+      <h1>Props in React JS</h1>
+      
+      <Wrapper color = "orange">
+        <h1>Hello Everyone</h1>
+      </Wrapper>
 
-       {student && <Student name = {student}/> }
-        <button onClick={()=>setStudent("Agaarwall")}>Update Student Name</button>
+      <Wrapper>
+        <h1>Hello Agarwal ji</h1>
+      </Wrapper>
 
-      {/* <User name = {userName} age = {age} email = {email}/> */}
+      <Wrapper>
+        <h1>Hello Admin ji</h1>
+        <h2 style={{color:"red"}}>Please login</h2>
+      </Wrapper>
 
-      <College name={collegeNames[0]} />
-      <College name={collegeNames[2]} />
-      <College name={collegeNames[3]} />
-      <College name={collegeNames[4]} />
+      {/*  <User name = "Agarwal ji"/>
+      <User name = "Singh ji"/>
+      <User name = "Tiwari Ji"/>
 
+      <User />
+      <User /> */}
 
-      <User user={userObject1} />
-      <User user={userObject2} />
-
-
-
-
-    </div>
+    </div> 
   )
 }
 
